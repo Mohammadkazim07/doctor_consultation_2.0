@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import doctorImage from "./assets/photo.jpeg"; // Ensure the photo is in the correct path
-import axios from "axios";
+//import axios from "axios";
 
 const DoctorSection = () => {
   const [isFormOpen, setIsFormOpen] = useState(false); // State to toggle form visibility

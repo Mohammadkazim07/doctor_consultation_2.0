@@ -9,7 +9,7 @@ import AchievementsSection from './Achievement';
 import NoticeSection from './Notice';
 
 const App = () => {
-  const [message, setMessage] = useState('');
+  const [setMessage] = useState('');
 
   useEffect(() => {
     const fetchMessage = async () => {
