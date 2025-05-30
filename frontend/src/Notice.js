@@ -25,7 +25,7 @@ const NoticeSection = () => {
     const interval = setInterval(() => {
       setCurrentNoticeIndex((prevIndex) => (prevIndex + 1) % notices.length);
     }, 3000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -34,8 +34,8 @@ const NoticeSection = () => {
   };
 
   const prevNotice = () => {
-    setCurrentNoticeIndex((prevIndex) => 
-      prevIndex === 0 ? notices.length - 1 : prevIndex - 1
+    setCurrentNoticeIndex((prevIndex) =>
+      (prevIndex - 1 + notices.length) % notices.length
     );
   };
 
@@ -49,8 +49,8 @@ const NoticeSection = () => {
       </div>
 
       <div className="buttons">
-        <button onClick={prevNotice} disabled={currentNoticeIndex === 0}>Prev</button>
-        <button onClick={nextNotice} disabled={currentNoticeIndex === notices.length - 1}>Next</button>
+        <button onClick={prevNotice} aria-label="Previous notice">Prev</button>
+        <button onClick={nextNotice} aria-label="Next notice">Next</button>
       </div>
 
       <style jsx>{`
@@ -58,7 +58,7 @@ const NoticeSection = () => {
           width: 80%;
           margin: 20px auto;
           padding: 20px;
-          background-color:rgb(153, 145, 145);
+          background-color: rgb(153, 145, 145);
           border-radius: 10px;
         }
 
@@ -66,7 +66,7 @@ const NoticeSection = () => {
           text-align: center;
           font-size: 2em;
           margin-bottom: 20px;
-          color: #333;
+          color: #fff;
         }
 
         .notice {
@@ -102,15 +102,11 @@ const NoticeSection = () => {
           border-radius: 5px;
           cursor: pointer;
           font-size: 1.1em;
+          transition: background-color 0.3s ease;
         }
 
         .buttons button:hover {
           background-color: #45a049;
-        }
-
-        .buttons button:disabled {
-          background-color: #ccc;
-          cursor: not-allowed;
         }
 
         .buttons button:focus {

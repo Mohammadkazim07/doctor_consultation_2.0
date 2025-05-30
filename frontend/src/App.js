@@ -7,8 +7,9 @@ import JournalsPublished from './JournalsPublished';
 import Services from './Services';
 import AchievementsSection from './Achievement';
 import NoticeSection from './Notice';
+
 const App = () => {
-  const [setMessage] = useState('');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -21,18 +22,17 @@ const App = () => {
     };
 
     fetchMessage();
-  }, []);
+  }, [setMessage]); // or just [] if ESLint allows it
 
   return (
     <div>
-      <Header/>
-      <DoctorSection/>
-      <NoticeSection/>
-      <JournalsPublished/>
-      <Services/>
-      <AchievementsSection/>
-      <Footer/>
-    
+      <Header />
+      <DoctorSection />
+      <NoticeSection />
+      <JournalsPublished />
+      <Services />
+      <AchievementsSection />
+      <Footer />
     </div>
   );
 };
