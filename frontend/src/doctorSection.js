@@ -28,7 +28,7 @@ const DoctorSection = () => {
     };
 
     // Send the data to the backend
-    fetch("https://doctor-consultation-backend.onrender.com/api/appointments", {
+    fetch("https://doctor-consultation-backend.vercel.app/api/appointments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
