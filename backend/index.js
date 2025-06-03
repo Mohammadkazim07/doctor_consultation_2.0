@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({origin:["https://drmohammadaamir.netlify.app"]}));
 app.use(bodyParser.json());
 
 // Nodemailer Transporter Setup
