@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchMessage = async () => {
       try {
-        const response = await axios.get('https://doctor-consultation-backend.onrender.com/api/message');
+        const response = await axios.get('https://doctor-consultation-backend.vercel.app/api/message');
         setMessage(response.data.message);
       } catch (error) {
         console.error('Error fetching data:', error);
